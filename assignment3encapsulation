@@ -1,0 +1,20 @@
+#1. Encapsulation:
+class BankAccount:
+  def __init__(self,owner,balance):
+    self.__owner=owner
+    self.__balance=balance
+
+  def deposit(self,amount):
+    if amount>0:
+      self.__balance +=amount
+
+  def withdraw(self,amount):
+    if 0<amount <= self.__balance:
+      self.__balance-=amount
+  def get_account_info(self):
+    return f"Owner: {self.__owner}, Balance: {self.__balance}"
+
+acc=BankAccount("Saffan",1000)
+acc.deposit(500)
+acc.withdraw(300)
+print(acc.get_account_info())
